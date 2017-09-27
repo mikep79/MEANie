@@ -4,7 +4,7 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 // 27017 is default mongo port
 mongoose.connect('localhost:/27017/meanie');
-var peepsSchema = new mongoose.Schema({
+var peepsSchema = new mongoose.Schema({ //check on peeps schema
     name: String,
     location: String
 });
