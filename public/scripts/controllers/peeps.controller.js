@@ -11,5 +11,7 @@ myApp.controller('WhereMyPeeps', function ( PeepsService) { //deleted $http
     vm.whereMyPeepsAt = function () {
         console.log('in whereMyPeepsAt');
         PeepsService.peeps.get();
+        vm.peepArray = PeepsService.peepArray;
+        console.log('controller peep array: ', vm.peepArray);
     }; //end whereMyPeepsAt
 }); // end controller
