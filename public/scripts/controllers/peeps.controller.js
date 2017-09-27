@@ -3,8 +3,8 @@ myApp.controller('WhereMyPeeps', function ( PeepsService) { //deleted $http
     vm.newPeep = function () {
         console.log('in newPeep');
         var peepToAdd = {
-            name: PeepsService.nameIn, //changed vm to PeepsService
-            location: PeepsService.locationIn // changed = to :
+            name: vm.nameIn,
+            location: vm.locationIn // changed = to :
         }; //end peepToAdd
         PeepsService.peeps.add(peepToAdd);
     }; //end whereMyPeepsAt
