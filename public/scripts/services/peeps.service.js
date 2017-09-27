@@ -3,7 +3,7 @@ myApp.service('PeepsService', function ($http) {
     sv.peeps = {
         add: function (newPeep) {
             console.log('in addRecord:', newPeep);
-            $.http({
+            $http({                     // deleted . after $
                 method: 'POST',
                 url: '/peeps',
                 data: newPeep
@@ -11,7 +11,7 @@ myApp.service('PeepsService', function ($http) {
         },
         get: function () {
             console.log('in getRecords');
-            return $http({
+            $http({                     // deleted 'return'
                 method: 'GET',
                 url: '/peeps',
             }).then(function (response) {
