@@ -17,7 +17,7 @@ peepsModel.find().then( function( data ){
 res.send( data );
 });
 });
-app.post( '/', function( req, res ){
+router.post( '/', function( req, res ){ //changed app to router
 console.log( 'req.body.name: ' + req.body.name );
 // retrieved the req.body
 // putting it into an object to be saved in the db
@@ -29,3 +29,6 @@ location:req.body.location
 var newRecord=peepsModel( recordToAdd );
 newRecord.save();
 });
+
+//added export line
+module.exports = router;
