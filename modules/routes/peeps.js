@@ -15,7 +15,7 @@ var peepsModel = mongoose.model('peepsModel', peepsSchema);
 
 router.get('/', function (req, res) {
     // get and send back all the things
-    peepsModel.find().then(function (data) {
+    peepsModel.find({}).then(function (data) {    // find { } = all. optional err code after find().
         res.send(data);
     });
 });
@@ -30,7 +30,13 @@ router.post('/', function (req, res) { //changed app to router
     }
     // create new record
     var newRecord = peepsModel(recordToAdd);
-    newRecord.save();
+    newRecord.save(function (err) {
+        if (err){
+            console.log('Peeps.js err: ', err);
+        } else {
+            res.sendStatus(200);
+        }
+    });       // save to database. OPTIONAL: callback funct within ().
 });
 
 //added export line

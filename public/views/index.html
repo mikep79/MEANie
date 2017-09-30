@@ -25,8 +25,8 @@
       <button ng-click='wmp.newPeep()'>Add</button>
       <button ng-click='wmp.whereMyPeepsAt()'>Read</button>
       <ul>
-        <li ng-repeat='eachPeep in wmp.peepArray.list'>
-          {{ eachPeep }}
+        <li ng-repeat='eachPeep in wmp.peepObj.peeps'>
+          {{ eachPeep.name }} from {{ eachPeep.location }}
         </li>
       </ul>
     </div>
